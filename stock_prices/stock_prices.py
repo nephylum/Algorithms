@@ -5,13 +5,19 @@ import argparse
 def find_max_profit(prices):
     #initialize a max
     max_profit = 0
+    #iterate through prices
     for x in range(len(prices)):
-        for y in range(x, len(prices)):
+        #iterate through following values
+        for y in range(x + 1, len(prices)):
+            #check if selling would be more profitable than previously recorded
+            #and update max_profit if it is
             if prices[y] - prices[x] > max_profit:
                 max_profit = prices[y] - prices[x]
     return max_profit
-print("find_max_profit([1050, 270, 1540, 3800, 2])  returns:")
-print(find_max_profit([1050, 270, 1540, 3800, 2]))
+
+#for testing:
+# print("find_max_profit([1050, 270, 1540, 3800, 2])  returns:")
+# print(find_max_profit([1050, 270, 1540, 3800, 2]))
 
 
 if __name__ == '__main__':
